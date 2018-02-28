@@ -8,35 +8,33 @@
 <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 <title>Test</title>
-	<style>
-		/* Sticky footer styles
+<style>
+/* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+	position: relative;
+	min-height: 100%;
 }
 body {
-  margin-bottom: 60px; /* Margin bottom by footer height */
+	margin-bottom: 60px; /* Margin bottom by footer height */
 }
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px; /* Set the fixed height of the footer here */
-  line-height: 60px; /* Vertically center the text there */
-  background-color: #f5f5f5;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px; /* Set the fixed height of the footer here */
+	line-height: 60px; /* Vertically center the text there */
+	background-color: #f5f5f5;
 }
-
-
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
 
 
-		.workscard{
-			margin-bottom:10px;
-		}
-	</style>
+.designercard {
+	margin-bottom: 10px;
+}
+</style>
 </head>
 <body>
 <!--the bg of navbar-->
@@ -45,8 +43,8 @@ body {
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item "> <a class="nav-link" href="index.html"><i class="fa fa-home"></i> 首页 <span class="sr-only">(current)</span></a> </li>
-      <li class="nav-item active"> <a class="nav-link" href="works.html"><i class="fa fa-image"></i> 作品</a> </li>
-      <li class="nav-item"> <a class="nav-link" href="#"><i class="fa fa-users"></i> 设计师</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="works.html"><i class="fa fa-image"></i> 作品</a> </li>
+      <li class="nav-item active"> <a class="nav-link" href="#"><i class="fa fa-users"></i> 设计师</a> </li>
       <li class="nav-item"> <a class="nav-link" href="#"><i class="fa fa-trophy"></i> 比赛</a> </li>
     </ul>
     <!--
@@ -80,7 +78,7 @@ body {
           <input type="text"  class="form-control" id="staticEmail" placeholder="email@example.com">
         </div>
         <div class="col-sm-3">
-          <button type="button" class="btn btn-primary mb-2"><i class="fa fa-search"></i> 查找作品</button>
+          <button type="button" class="btn btn-primary mb-2"><i class="fa fa-search"></i> 查找设计师</button>
         </div>
       </div>
     </form>
@@ -90,51 +88,88 @@ body {
 <!--the bg of content-->
 <div class="w-100 p-3" >
   <div class="row">
-  	 <div class="card flex-md-row mb-4 box-shadow h-md-250">
-            <img class="card-img-right flex-auto d-none d-md-block" src="holder.js/200x250" alt="Thumbnail [200x250]" style="width: 200px; height: 250px;"  data-holder-rendered="true"><div class="card-body d-flex flex-column align-items-start">
-              <strong class="d-inline-block mb-2 text-primary">World</strong>
-              <h3 class="mb-0">
-                <a class="text-dark" href="#">Featured post</a>
-              </h3>
-              <div class="mb-1 text-muted">Nov 12</div>
-              <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-              <a href="#">Continue reading</a>
-            </div>
-            
-          </div>
-          <div class="card flex-md-row mb-4 box-shadow h-md-250">
-            <img class="card-img-right flex-auto d-none d-md-block" src="holder.js/200x250" alt="Thumbnail [200x250]" style="width: 200px; height: 250px;" src="" data-holder-rendered="true" /><div class="card-body d-flex flex-column align-items-start">
-              <strong class="d-inline-block mb-2 text-primary">World</strong>
-              <h3 class="mb-0">
-                <a class="text-dark" href="#">Featured post</a>
-              </h3>
-              <div class="mb-1 text-muted">Nov 12</div>
-              <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-              <a href="#">Continue reading</a>
-            </div>
-            
-          </div>
-          <div class="card flex-md-row mb-4 box-shadow h-md-250">
-           <img class="card-img-right flex-auto d-none d-md-block" src="holder.js/200x250" alt="Thumbnail [200x250]" style="width: 200px; height: 250px;" src="" data-holder-rendered="true" /><div class="card-body d-flex flex-column align-items-start">
-              <strong class="d-inline-block mb-2 text-primary">World</strong>
-              <h3 class="mb-0">
-                <a class="text-dark" href="#">Featured post</a>
-              </h3>
-              <div class="mb-1 text-muted">Nov 12</div>
-              <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-              <a href="#">Continue reading</a>
-            </div>
-            
-          </div>
+   
+
+  
+  <div class="col-md-3 col-sm-6 designercard">
+      <div class="card flex-md-row  box-shadow "> <img class="card-img-right flex-auto d-none d-md-block" src="holder.js/200x200" alt="Thumbnail [200x200]" style="width: 200px; height: 200px;"  data-holder-rendered="true">
+        <div class="card-body d-flex flex-column align-items-start"> 
+          <h5 class="mb-0"> <a class="text-dark" href="#">Featured post</a> </h5>
+          <div class="">Nov 12</div>
+          <p class="mb-1 text-muted">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+  
+   <div class="col-md-3 col-sm-6 designercard">
+      <div class="card flex-md-row  box-shadow "> <img class="card-img-right flex-auto d-none d-md-block" src="holder.js/200x200" alt="Thumbnail [200x200]" style="width: 200px; height: 200px;"  data-holder-rendered="true">
+        <div class="card-body d-flex flex-column align-items-start"> 
+          <h5 class="mb-0"> <a class="text-dark" href="#">Featured post</a> </h5>
+          <div class="">Nov 12</div>
+          <p class="mb-1 text-muted">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+  
+   <div class="col-md-3 col-sm-6 designercard">
+      <div class="card flex-md-row  box-shadow "> <img class="card-img-right flex-auto d-none d-md-block" src="holder.js/200x200" alt="Thumbnail [200x200]" style="width: 200px; height: 200px;"  data-holder-rendered="true">
+        <div class="card-body d-flex flex-column align-items-start"> 
+          <h5 class="mb-0"> <a class="text-dark" href="#">Featured post</a> </h5>
+          <div class="">Nov 12</div>
+          <p class="mb-1 text-muted">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+  
+   <div class="col-md-3 col-sm-6 designercard">
+      <div class="card flex-md-row  box-shadow "> <img class="card-img-right flex-auto d-none d-md-block" src="holder.js/200x200" alt="Thumbnail [200x200]" style="width: 200px; height: 200px;"  data-holder-rendered="true">
+        <div class="card-body d-flex flex-column align-items-start"> 
+          <h5 class="mb-0"> <a class="text-dark" href="#">Featured post</a> </h5>
+          <div class="">Nov 12</div>
+          <p class="mb-1 text-muted">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+  
+  
+   <div class="col-md-3 col-sm-6 designercard">
+      <div class="card flex-md-row  box-shadow "> <img class="card-img-right flex-auto d-none d-md-block" src="holder.js/200x200" alt="Thumbnail [200x200]" style="width: 200px; height: 200px;"  data-holder-rendered="true">
+        <div class="card-body d-flex flex-column align-items-start"> 
+          <h5 class="mb-0"> <a class="text-dark" href="#">Featured post</a> </h5>
+          <div class="">Nov 12</div>
+          <p class="mb-1 text-muted">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
   </div>
 </div>
+<!--the bg of pagination-->
+<div class="w-100 p-3">
+	<div class="row">
+	<div class="col-12">
+		<nav aria-label="...">
+  <ul class="pagination pagination-sm">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1">1</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">4</a></li>
+    <li class="page-item"><a class="page-link" href="#">5</a></li>
+  </ul>
+</nav></div>
+	</div>
+</div>
+<!--the end of pagination-->
 <!--the end of content--> 
-<!-- Optional JavaScript --> 
+<!--the bg of footer-->
 <footer class="footer">
       <div class="col-md-12">
         <span class="text-muted">Place sticky footer content here.</span>
       </div>
     </footer>
+<!--the end of footer--> 
+<!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> 
 <script src="https://cdn.bootcss.com/holder/2.9.4/holder.min.js"></script> 
