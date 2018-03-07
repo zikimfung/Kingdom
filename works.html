@@ -48,7 +48,7 @@ body {
 </head>
 <body>
 <!--the bg of navbar-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a class="navbar-brand" href="#">Test</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a class="navbar-brand" href="/">Kingdom</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -72,8 +72,8 @@ body {
 <!--the end of navbar--> 
 <!--the bg of search-->
 <div class="w-100 p-3" style="background-color: #eee;">
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        该平台暂时一共有<strong>722</strong>件作品
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -196,7 +196,6 @@ body {
 <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> 
 <script src="https://cdn.bootcss.com/jquery.isotope/3.0.5/isotope.pkgd.js"></script>
-<script src="https://cdn.bootcss.com/holder/2.9.4/holder.min.js"></script> 
 <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script> 
 <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
 <script>
@@ -206,7 +205,6 @@ $(function(){
 	$(".grid-item").css("width",w-10);
 	console.log(w);
   $(".grid").isotope({ 
-    resizable: false,
     itemSelector: '.grid-item',
     layoutMode: 'masonry'
   })
