@@ -17,7 +17,7 @@ body {
 	margin-bottom: 60px; /* Margin bottom by footer height */
 }
 .footer {
-	position: relative;
+	position: absolute;
 	bottom: 0;
 	width: 100%;
 	height: 60px; /* Set the fixed height of the footer here */
@@ -250,27 +250,27 @@ $(function(){
       itemWidth: 300, // Optional min width of a grid item
       autoResize: true, // This will auto-update the layout when the browser window is resized.
       container: $('.grid'), // Optional, used for some extra CSS styling
-      offset: 8, 
-      outerOffset: 20, // Optional the distance from grid to parent
-      flexibleWidth: '16.6%' // Optional, the maximum width of a grid item
+      offset: 4, 
+      flexibleWidth: '16.6%', // Optional, the maximum width of a grid item
+      fillEmptySpace: true // Optional, fill the bottom of each column with widths of flexible height
     };
  
     // Get a reference to your grid items.
 
     $(window).resize(function(){
-      var windowWidth = $(window).width(),
+      var gWidth = $('.grid').width(),
         newOptions = {
           flexibleWidth: '16.6%'
         };
-      console.log($(window).width());
+      console.log($('.grid').width());
       // Breakpoint
-      if (windowWidth < 576) {
+      if (gWidth < 576) {
         newOptions.flexibleWidth = '50%';
-      }else if(windowWidth < 768) {
+      }else if(gWidth < 768) {
         newOptions.flexibleWidth = '33.3%';
-      }else if(windowWidth < 992) {
+      }else if(gWidth < 992) {
         newOptions.flexibleWidth = '16.6%';
-      }else if(windowWidth < 1200) {
+      }else if(gWidth < 1200) {
         newOptions.flexibleWidth = '16.6%';
       }
       $('.grid .grid-item').wookmark(newOptions);
