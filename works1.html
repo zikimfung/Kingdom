@@ -17,7 +17,7 @@ body {
 	margin-bottom: 60px; /* Margin bottom by footer height */
 }
 .footer {
-	position: absolute;
+	position: relative;
 	bottom: 0;
 	width: 100%;
 	height: 60px; /* Set the fixed height of the footer here */
@@ -29,19 +29,23 @@ body {
 /* Not required for template or sticky footer method. */
 .cont-grid {
 	padding: 5px 0 0 5px;
+  position:relative
 }
 .grid-item {
-	height: auto;
-	margin: 5px;
-	padding: 0px !important;
+  display:none;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
 }
 .grid {
 	padding: 5px 0px;
 	height: auto;
+  position:relative;
 }
+
 .workscard img {
 	width: 100%;
 	height: auto;
+  display:block;
 }
 </style>
 </head>
@@ -104,7 +108,7 @@ body {
 <!--the bg of content-->
 <div class="w-100 p-3 cont-grid" >
   <div class="row grid" >
-    <div class="card grid-item workscard col-lg-2 col-md-4 col-sm-4 col-6" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1927/5206.png" style="width: 100%;height: auto" alt="Card image cap">
+    <div class="card grid-item workscard" style=""> <img  class="card-img-top" width="100%" height="auto" src="http://ate.91ant.com/Public/common/works/0/1/1927/5206.png" style="width: 100%;height: auto" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">1.Special title treatment</h5>
         <ul class="list-inline">
@@ -115,7 +119,7 @@ body {
         <a href="#" class="btn btn-primary">Go somewhere</a></div>
       <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small> </div>
     </div>
-    <div class="card workscard grid-item col-lg-2 col-md-4 col-sm-4 col-6" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1926/5200.png" alt="Card image cap">
+    <div class="card grid-item workscard" style=""> <img  class="card-img-top" width="100%" height="auto" src="http://ate.91ant.com/Public/common/works/0/1/1926/5200.png" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">2.Special title treatment</h5>
         <ul class="list-inline">
@@ -126,7 +130,7 @@ body {
         <a href="#" class="btn btn-primary">Go somewhere</a></div>
       <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small> </div>
     </div>
-    <div class="card workscard grid-item col-lg-2 col-md-4 col-sm-4 col-6" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1925/5194.png" alt="Card image cap">
+    <div class="card grid-item workscard" style=""> <img  class="card-img-top" width="100%" height="auto" src="http://ate.91ant.com/Public/common/works/0/1/1925/5194.png" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">3.Special title treatment</h5>
         <ul class="list-inline">
@@ -137,7 +141,7 @@ body {
         <a href="#" class="btn btn-primary">Go somewhere</a></div>
       <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small> </div>
     </div>
-    <div class="card workscard grid-item col-lg-2 col-md-4 col-sm-4 col-6" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1924/5188.png" alt="Card image cap">
+    <div class="card grid-item workscard" style=""> <img  class="card-img-top" width="100%" height="auto" src="http://ate.91ant.com/Public/common/works/0/1/1924/5188.png" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">4.Special title treatment</h5>
         <ul class="list-inline">
@@ -148,7 +152,7 @@ body {
         <a href="#" class="btn btn-primary">Go somewhere</a></div>
       <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small> </div>
     </div>
-    <div class="card workscard grid-item col-lg-2 col-md-4 col-sm-4 col-6" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1923/5182.png" alt="Card image cap">
+    <div class="card grid-item workscard" style=""> <img  class="card-img-top" width="100%" height="auto" src="http://ate.91ant.com/Public/common/works/0/1/1923/5182.png" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">5.Special title treatment</h5>
         <ul class="list-inline">
@@ -159,7 +163,7 @@ body {
         <a href="#" class="btn btn-primary">Go somewhere</a></div>
       <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small> </div>
     </div>
-    <div class="card grid-item workscard col-lg-2 col-md-4 col-sm-4 col-6" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1922/5176.png" alt="Card image cap">
+    <div class="card grid-item workscard" style=""> <img  class="card-img-top" width="100%" height="auto" src="http://ate.91ant.com/Public/common/works/0/1/1922/5176.png" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">6.Special title treatment</h5>
         <ul class="list-inline">
@@ -170,7 +174,7 @@ body {
         <a href="#" class="btn btn-primary">Go somewhere</a></div>
       <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small> </div>
     </div>
-    <div class="card workscard grid-item col-lg-2 col-md-4 col-sm-4 col-6" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1921/5172.png" alt="Card image cap">
+    <div class="card grid-item workscard" style=""> <img  class="card-img-top" width="100%" height="auto" src="http://ate.91ant.com/Public/common/works/0/1/1921/5172.png" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">7.Special title treatment</h5>
         <ul class="list-inline">
@@ -181,7 +185,7 @@ body {
         <a href="#" class="btn btn-primary">Go somewhere</a></div>
       <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small> </div>
     </div>
-    <div class="card workscard grid-item col-lg-2 col-md-4 col-sm-4 col-6" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1919/5163.png" alt="Card image cap">
+    <div class="card grid-item workscard" style=""> <img  class="card-img-top" width="100%" height="auto" src="http://ate.91ant.com/Public/common/works/0/1/1919/5163.png" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">8.Special title treatment</h5>
         <ul class="list-inline">
@@ -192,7 +196,7 @@ body {
         <a href="#" class="btn btn-primary">Go somewhere</a></div>
       <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small> </div>
     </div>
-    <div class="card workscard grid-item col-lg-2 col-md-4 col-sm-4 col-6" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1918/5159.png" alt="Card image cap">
+    <div class="card grid-item workscard" style=""> <img  class="card-img-top" width="100%" height="auto" src="http://ate.91ant.com/Public/common/works/0/1/1918/5159.png" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">9.Special title treatment</h5>
         <ul class="list-inline">
@@ -203,7 +207,7 @@ body {
         <a href="#" class="btn btn-primary">Go somewhere</a></div>
       <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small> </div>
     </div>
-    <div class="card workscard grid-item col-lg-2 col-md-4 col-sm-4 col-6" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1917/5157.png" alt="Card image cap">
+    <div class="card grid-item workscard" style=""> <img  class="card-img-top" width="100%" height="auto" src="http://ate.91ant.com/Public/common/works/0/1/1917/5157.png" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">10.Special title treatment</h5>
         <ul class="list-inline">
@@ -233,31 +237,47 @@ body {
 <!-- Optional JavaScript --> 
 <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> 
-<script src="https://cdn.bootcss.com/jquery.isotope/3.0.5/isotope.pkgd.js"></script> 
+<script src="http://code.ciaoca.com/jquery/wookmark/demo/js/jquery.imagesloaded.js"></script>
+<script src="http://code.ciaoca.com/jquery/wookmark/demo/js/jquery.wookmark.min.js"></script>
 <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script> 
 <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
 <script>
 	// init Isotope
 $(function(){
-	var w=$(".grid-item").width();
- $(".grid-item").css("width",w-8);
-  $(".grid").isotope({ 
-    itemSelector: '.grid-item',
-    layoutMode: 'masonry'
-  });
+  $('.grid').imagesLoaded(function(){
+    // Prepare layout options.
+    var options = {
+      itemWidth: 300, // Optional min width of a grid item
+      autoResize: true, // This will auto-update the layout when the browser window is resized.
+      container: $('.grid'), // Optional, used for some extra CSS styling
+      offset: 8, 
+      outerOffset: 20, // Optional the distance from grid to parent
+      flexibleWidth: '16.6%' // Optional, the maximum width of a grid item
+    };
+ 
+    // Get a reference to your grid items.
 
-  $(window).resize(function(){
-    var w=$(".grid-item").width();
-    $(".grid-item").css("width",w-8);
-    $(".grid").isotope({ 
-      itemSelector: '.grid-item',
-      layoutMode: 'masonry'
+    $(window).resize(function(){
+      var windowWidth = $(window).width(),
+        newOptions = {
+          flexibleWidth: '16.6%'
+        };
+      console.log($(window).width());
+      // Breakpoint
+      if (windowWidth < 576) {
+        newOptions.flexibleWidth = '50%';
+      }else if(windowWidth < 768) {
+        newOptions.flexibleWidth = '33.3%';
+      }else if(windowWidth < 992) {
+        newOptions.flexibleWidth = '16.6%';
+      }else if(windowWidth < 1200) {
+        newOptions.flexibleWidth = '16.6%';
+      }
+      $('.grid .grid-item').wookmark(newOptions);
     });
-  })
-  $("#btn-more").click(function(){
-    $(this).addClass('disabled');
-    $(this).html('<i class="fa fa-spinner fa-spin"></i> 正在加载中..');
-  })
+    // Call the layout function.
+    $('.grid .grid-item').wookmark(options); 
+  });
 });
 	
 </script>
