@@ -261,12 +261,45 @@ body {
 <script>
 	// init Isotope
 $(function(){
-	var w=$(".grid-item").width();
-  $(".grid-item").css("width",w-8);
-	console.log(w);
+  var testgw=function(){
+    var gw=$(".grid").width();
+    if(gw>1200){
+      giw=$(".grid-item").css("width",gw/6-8);
+    }else if(gw>992){
+      giw=$(".grid-item").css("width",gw/6-8);
+    }else if(gw>769){
+      giw=$(".grid-item").css("width",gw/3-8);
+    }else if(gw<769&&gw>577){
+      giw=$(".grid-item").css("width",gw/3-8);
+    }else if(gw>576){
+      giw=$(".grid-item").css("width",gw/2-8);
+    }else{
+      giw=$(".grid-item").css("width",gw/2-8);
+    }
+  }
+  testgw();
   $(".grid").isotope({ 
     itemSelector: '.grid-item',
     layoutMode: 'masonry'
+  });
+
+  $('.grid').imagesLoaded(function(){
+    testgw();
+    $(".grid").isotope({ 
+      itemSelector: '.grid-item',
+      layoutMode: 'masonry'
+      
+    });
+    
+  });
+
+$(window).resize(function(){
+  testgw();
+    $(".grid").isotope({ 
+      itemSelector: '.grid-item',
+      layoutMode: 'masonry'
+    });
+    
   });
   $("#btn-more").click(function(){
     $(this).addClass('disabled');
