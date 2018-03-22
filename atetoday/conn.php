@@ -9,25 +9,40 @@ if (!$conn){
 }
 mysql_select_db("91ant");
 mysql_query("set names utf8"); //**设置字符集***
+//////////////////  the bg of works ///////////////////////
 $result=mysql_query("SELECT * FROM `91ant_works` ORDER BY works_id DESC", $conn);
 while($row=mysql_fetch_array($result)){
   if($row["works_type"] == "photo"){
-    // $photo=mysql_query("SELECT photo_id FROM 91ant_photo WHERE is_deleted = 0 AND works_id = ".$row["works_id"],$conn);
-    // $row["cover"]="http://ate.91ant.com/Public/common/works".generate_dir($row['works_id'])."/".$photo["photo_id"].".png";
-	$pl="";
+  $pl="";
+  $p=mysql_fetch_array(mysql_query("SELECT photo_id FROM 91ant_photo WHERE is_deleted = 0 AND works_id = ".$row["works_id"],$conn));
+  $row["cover"]="http://ate.91ant.com/Public/common/works".generate_dir($row['works_id'])."/".$p["photo_id"].".png";
   $result1=mysql_query("SELECT photo_id FROM 91ant_photo WHERE is_deleted = 0 AND works_id =".$row["works_id"],$conn);
   while($row1=mysql_fetch_array($result1)){
 	  $pl.="<p style='text-align: center'><img src='http://ate.91ant.com/Public/common/works".generate_dir($row['works_id'])."/".$row1['photo_id'].".png' /></p>";
   }
   $info=$row["works_info"].$pl;
-  $sql='update 91ant_works set info="'.htmlspecialchars_decode($info).'" where works_id='.$row["works_id"];
+  $sql='update 91ant_works set cover="'.$row["cover"].'", info="'.htmlspecialchars_decode($info).'" where works_id='.$row["works_id"];
  //echo $sql;
-	mysql_query($sql,$conn);
+	//mysql_query($sql,$conn);
   }else{
     $row["cover"]="http://ate.91ant.com/Public/common/default/tencent_video_cover.jpg";
   }
-  
-  //print_r($row);
 }
+//////////////////  the end of works ///////////////////////
+
+//////////////////  the bg of school ///////////////////////
+$result=mysql_query("SELECT * FROM `school` ORDER BY create_timestamp ASC", $conn);
+while($row=mysql_fetch_array($result)){
+  $p=mysql_fetch_array(mysql_query("SELECT school_id FROM 91ant_school WHERE user_id = ".$row["user_id"],$conn));
+  $logo='http://ate.91ant.com/Public/common/school'.generate_dir($p["school_id"]).'/cover.png';
+  $cover="http://ate.91ant.com/Public/common/school".generate_dir($p["school_id"])."/school_cover.png";
+  $sql='update school set school_id='.$p["school_id"].',logo="'.$logo.'",cover="'.$cover.'" where user_id='.$row["user_id"];
+//echo $sql;
+  //mysql_query($sql,$conn);
+}
+//"http://ate.91ant.com/public/Public/common/school".generate_dir()."/cover.png";
+//////////////////  the end of school ///////////////////////
+
+
 mysql_close($conn);
 ?>
