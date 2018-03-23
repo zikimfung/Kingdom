@@ -26,6 +26,10 @@ while($row=mysql_fetch_array($result)){
 	//mysql_query($sql,$conn);
   }else{
     $row["cover"]="http://ate.91ant.com/Public/common/default/tencent_video_cover.jpg";
+	$info="<iframe style='height: 400px' class='video_iframe' src='http://v.qq.com/iframe/player.html?vid=".$row['video_platform_id']."&auto=0' allowfullscreen='' frameborder='0' height='100%' width='100%'></iframe>";
+	$sql='update works set info="'.htmlspecialchars($info).'" where works_id='.$row["works_id"];
+	//echo $sql.";<br/>";
+	//mysql_query($sql,$conn);
   }
 }
 //////////////////  the end of works ///////////////////////
