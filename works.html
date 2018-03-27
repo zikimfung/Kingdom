@@ -222,7 +222,7 @@ body {
 <!--the bg of pagination-->
 <div class="w-100 p-3">
   <div class="row">
-    <button type="button" id="btn-more" class="btn btn-danger w-100">点击加载</button>
+    <button type="button" data-pagecount="67" data-nextpage="2" id="btn-more" class="btn btn-danger w-100">点击加载</button>
   </div>
 </div>
 
@@ -240,52 +240,93 @@ body {
 <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script> 
 <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
 <script>
-	// init Isotope
-$(function(){
-  var testgw=function(){
+	$(function(){
+  //$("#btn-more").data("nextpage",2);
+  var test=function(){
     var gw=$(".grid").width();
     if(gw>1200){
-      giw=$(".grid-item").css("width",gw/6-8);
+      $(".grid-item").css("width",gw/6-8);
+      var giw=gw/6-8;
     }else if(gw>992){
-      giw=$(".grid-item").css("width",gw/6-8);
+      $(".grid-item").css("width",gw/6-8);
+      var giw=gw/6-8;
     }else if(gw>769){
-      giw=$(".grid-item").css("width",gw/3-8);
+      $(".grid-item").css("width",gw/3-8);
+      var giw=gw/3-8;
     }else if(gw<769&&gw>577){
-      giw=$(".grid-item").css("width",gw/3-8);
+      $(".grid-item").css("width",gw/3-8);
+      var giw=gw/3-8;
     }else if(gw>576){
-      giw=$(".grid-item").css("width",gw/2-8);
+      $(".grid-item").css("width",gw/2-8);
+      var giw=gw/2-8;
     }else{
-      giw=$(".grid-item").css("width",gw/2-8);
+      $(".grid-item").css("width",gw/2-8);
+      var giw=gw/2-8;
     }
-  }
-  testgw();
-  $(".grid").isotope({ 
-    itemSelector: '.grid-item',
-    layoutMode: 'masonry'
-  });
-
-  $('.grid').imagesLoaded(function(){
-    testgw();
     $(".grid").isotope({ 
+      percentPosition: true,
       itemSelector: '.grid-item',
       layoutMode: 'masonry'
-      
     });
+  }
+  test();
+  
+
+  $('.grid').imagesLoaded(function(){
+    test();
     
   });
 
 $(window).resize(function(){
-  testgw();
-    $(".grid").isotope({ 
-      itemSelector: '.grid-item',
-      layoutMode: 'masonry'
-    });
-    
+  test();
   });
 
-  $("#btn-more").click(function(){
-    $(this).addClass('disabled');
-    $(this).html('<i class="fa fa-spinner fa-spin"></i> 正在加载中..');
+  $("#btn-more").on("click",function(){
+    var nextpage=$(this).attr("data-nextpage");
+    $(this).attr("data-nextpage",(nextpage)/1+1);
+    $.ajax({
+            url:"/OtherWorks.json",
+            data:"p="+nextpage+"&pc="+$(this).data("pagecount"),
+            async: false,
+            dataType:'json',
+            success:function(data){
+              if(data!="Null"){
+                $(this).addClass('disabled');
+                $(this).html('<i class="fa fa-spinner fa-spin"></i> 正在加载中..');
+                var w="";
+                console.log(data);
+                for(var i=0; i<=data.length-1; i++){
+                  w+='<div class="card workscard grid-item">'+
+                  '<a href="/worksinfo/'+data[i].works_id+'">'+
+                  '<img class="card-img-top" src="'+data[i].cover+'" style="width: 100%;height: auto" alt="'+data[i].works_name+'">'+
+                  '</a>'+
+                  '<div class="card-body">'+
+                  '<h5 class="card-title">'+
+                  '<a href="/worksinfo/'+data[i].works_id+'">'+data[i].works_name+'</a>'+
+                  '</h5>'+
+                  '<ul class="list-inline">'+
+                  '<li class="list-inline-item"><i class="fa fa-eye"></i> 999+</li>'+
+                  '<li class="list-inline-item"><i class="fa fa-thumbs-o-up"></i> 999+</li>'+
+                  '</ul></div>'+
+                  '<div class="card-footer"> <small class="text-muted">'+data[i].create_time+'</small> </div>'+
+                  '</div>';
+                }
+                $('.grid').append(w).isotope( 'reloadItems').isotope({ 
+                  percentPosition: true,
+                  itemSelector: '.grid-item',
+                  layoutMode: 'masonry'
+                });
+                 $('.grid').imagesLoaded().progress( function() {
+                  test(); 
+                });
+                $(this).removeClass('disabled');
+                $(this).html('点击加载');
+              }else{
+                $(this).html('我是一个有底线的人');
+              }
+            }
+        });
+ 
   })
 });
 	
