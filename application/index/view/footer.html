@@ -1,0 +1,66 @@
+<!--the end of pagination--> 
+<!--the bg of footer-->
+<footer class="footer">
+  <div class="col-md-12"> <span class="text-muted">Place sticky footer content here.</span> </div>
+</footer>
+<!--the end of footer--> 
+<!-- Optional JavaScript --> 
+<!-- jQuery first, then Popper.js, then Bootstrap JS --> 
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> 
+<script src="https://cdn.bootcss.com/jquery.imagesloaded/3.0.4/jquery.imagesloaded.js"></script>
+<script src="https://cdn.bootcss.com/jquery.isotope/3.0.5/isotope.pkgd.js"></script> 
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script> 
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+<script>
+	// init Isotope
+$(function(){
+  var testgw=function(){
+    var gw=$(".grid").width();
+    if(gw>1200){
+      giw=$(".grid-item").css("width",gw/6-8);
+    }else if(gw>992){
+      giw=$(".grid-item").css("width",gw/6-8);
+    }else if(gw>769){
+      giw=$(".grid-item").css("width",gw/3-8);
+    }else if(gw<769&&gw>577){
+      giw=$(".grid-item").css("width",gw/3-8);
+    }else if(gw>576){
+      giw=$(".grid-item").css("width",gw/2-8);
+    }else{
+      giw=$(".grid-item").css("width",gw/2-8);
+    }
+  }
+  testgw();
+  $(".grid").isotope({ 
+    itemSelector: '.grid-item',
+    layoutMode: 'masonry'
+  });
+
+  $('.grid').imagesLoaded(function(){
+    testgw();
+    $(".grid").isotope({ 
+      itemSelector: '.grid-item',
+      layoutMode: 'masonry'
+      
+    });
+    
+  });
+
+$(window).resize(function(){
+  testgw();
+    $(".grid").isotope({ 
+      itemSelector: '.grid-item',
+      layoutMode: 'masonry'
+    });
+    
+  });
+
+  $("#btn-more").click(function(){
+    $(this).addClass('disabled');
+    $(this).html('<i class="fa fa-spinner fa-spin"></i> 正在加载中..');
+  })
+});
+	
+</script>
+</body>
+</html>

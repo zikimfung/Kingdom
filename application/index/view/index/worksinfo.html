@@ -1,0 +1,106 @@
+{include file="header" /}
+<style>
+#article img{
+  max-width: 100%;
+}
+</style>
+<!--the bg of content-->
+<div class="w-100 p-3" >
+  <div class="container">
+    <div class="row">
+      
+      <div id="title" class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <h1 class="display-4"> {$data.0.works_name}</h1>
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <i class="fa fa-clock-o"></i>
+              {$data.0.create_time}</li>
+            <li class="list-inline-item">
+              <i class="fa fa-eye"></i> 999+
+            </li>
+            <!--
+            <li class="list-inline-item">
+              <i class="fa fa-commenting-o"></i> 999+ 
+            </li>
+          -->
+            <li class="list-inline-item">
+              <i class="fa fa-thumbs-o-up"></i> 999+
+            </li>
+          </ul>
+        </div>
+        <nav aria-label="breadcrumb" class="col-xs-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="/"><i class="fa fa-home"></i> 首页</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="/works"><i class="fa fa-image"></i> 作品</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              {$data.0.works_name}
+            </li>
+          </ol>
+        </nav>
+        <div id="article" class="col-xs-9 col-lg-9 col-md-12 col-sm-12 col-12">{$data.0.info}</div>
+        <div id="author" class="col-xs-3 col-lg-3 col-md-12 col-sm-12 col-12">
+          <!--if more author-->
+          <!--  
+          <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">作品作者</h5>
+                  <ul class="list-inline">
+                    <li class="list-inline-item">
+                      <img src="holder.js/85x85" alt="..." class="float-left rounded-circle" />
+                    </li>
+                    <li class="list-inline-item">
+                      <img src="holder.js/85x85" alt="..." class="float-left rounded-circle" />
+                    </li>
+                    <li class="list-inline-item">
+                      <img src="holder.js/85x85" alt="..." class="float-left rounded-circle" />
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          -->
+          <!--end if-->
+          <!--if only one author-->
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">作品作者</h5>
+                  <div class="row">
+                      <div class="col-xs-12 col-lg-12 col-md-5 col-sm-5 col-5 text-center">
+                        <img src="holder.js/100x100" alt="..." class="rounded-circle" />
+                      </div>
+                      <div class="col-xs-12 col-lg-12 col-md-7 col-sm-7 col-7">
+                        <ul class="list-unstyled text-center">
+                            <li>{$Student.0.real_name}</li>
+                            <li>{$School.0.real_name}</li>
+                        </ul>
+                      </div>
+                  </div>
+                  
+                </div>
+            </div>
+          <!--end if-->
+        </div>
+    </div>
+   
+  </div>
+</div>
+<!--the end of content--> 
+<!--the bg of footer-->
+<footer class="footer">
+  <div class="col-md-12"> <span class="text-muted">Place sticky footer content here.</span> </div>
+</footer>
+<!--the end of footer--> 
+<!-- Optional JavaScript --> 
+<!-- jQuery first, then Popper.js, then Bootstrap JS --> 
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> 
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://cdn.bootcss.com/holder/2.9.4/holder.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+<script>
+	
+</script>
+</body>
+</html>
