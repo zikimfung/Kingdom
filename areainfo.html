@@ -78,34 +78,51 @@ body {
 </nav>
 <!--the end of navbar-->
 <!--the bg of jumbotron--> 
-<div class="jumbotron">
+<div class="jumbotron" style="background-color: #e9ecef;padding: 0rem 1rem;">
     <div class="row p-3">
       <div class="media">
         <img class="align-self-start mr-3 rounded-circle" style="width:85px; height:85px;" src="http://ate.91ant.com/Public/common/school/0/0/15/cover.png" alt="Generic placeholder image">
         <div class="media-body">
           <h5 class="mt-0">北京师范大学珠海校区</h5>
-          <p>广东省,珠海市<br/>学生:99992+</span> | <span>作品:999222+</p>
+          <span>广东省,珠海市</span><br/>
+          <span>设计师:99992+</span> | <span>创作:999222+</span>
         </div>
       </div>
     </div>
-    <p>北京师范大学珠海分校（Beijing Normal University, Zhuhai）坐落在海滨城市珠海，是教育部批准设立、由北京师范大学和珠海市人民政府合作举办、进行本科层次教育的全日制普通本科高校。</p>
+    <p style="display:none;">北京师范大学珠海分校（Beijing Normal University, Zhuhai）坐落在海滨城市珠海，是教育部批准设立、由北京师范大学和珠海市人民政府合作举办、进行本科层次教育的全日制普通本科高校。</p>
 </div>
 <!--the end of jumbotron-->
-        <div class="w-100 m-1">
-          <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-            <div class="btn-group mr-2" role="group" aria-label="First group">
-              <button type="button" class="btn btn-secondary" disabled="disabled">最新</button>
-              <button type="button" class="btn btn-secondary">推荐</button>
-            </div>
-            <div class="input-group">
-              <select class="form-control" id="exampleFormControlSelect1">
-                  <option>选择年度作品</option>
-                  <option>2017年作品</option>
-                  <option>2018年作品</option>
-              </select>
-            </div>
-          </div>
-        </div>
+<div class="w-100" >
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">最新</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">浏览最多</a>
+      </li>
+      <!--
+      <li class="nav-item">
+        <a class="nav-link " href="#">Disabled</a>
+      </li>
+    -->
+    </ul>
+  </div>
+<div class="w-100 p-1" style="display:none;">
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+      <div class="btn-group mr-2" role="group" aria-label="First group">
+        <button type="button" class="btn btn-secondary" {if ($Think.get.order=='')&&($Think.get.order=='new')}disabled="disabled"{/if}>最新</button>
+        <button type="button" class="btn btn-secondary" {if ($Think.get.order=='')}>浏览量多</button>
+        <button type="button" class="btn btn-secondary" {if ($Think.get.order=='')}>点赞量多</button>
+      </div>
+      <div class="input-group">
+        <select class="form-control" id="exampleFormControlSelect1">
+            <option>选择年度作品</option>
+            <option>2018年作品</option>
+            <option>2017年作品</option>
+        </select>
+      </div>
+    </div>
+  </div>
 <!--the bg of content-->
 <div class="w-100 grid" >
     <div class="card workscard grid-item" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1927/5206.png" style="width: 100%;height: auto" alt="Card image cap">
@@ -284,7 +301,7 @@ $(window).resize(function(){
     var nextpage=$(this).attr("data-nextpage");
     $(this).attr("data-nextpage",(nextpage)/1+1);
     $.ajax({
-            url:"/OtherWorks.json",
+            url:"OtherWorks.json",
             data:"p="+nextpage+"&pc="+$(this).data("pagecount"),
             async: false,
             dataType:'json',

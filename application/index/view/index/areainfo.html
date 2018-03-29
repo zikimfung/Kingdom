@@ -1,156 +1,86 @@
 {include file="header" /}
 <!--the bg of jumbotron--> 
-<div class="jumbotron">
-    <div class="row p-3">
+<div class="jumbotron" style="background-color: #e9ecef;padding: 0rem 1rem;">
+    <div class="row p-4">
       <div class="media">
           <img class="align-self-start mr-3 rounded-circle" style="width:85px; height:85px;" src="{$data.0.logo}" alt="{$data.0.real_name}">
           <div class="media-body">
             <h5 class="mt-0">{$data.0.real_name}</h5>
-            <p>{$data.0.pe_name},{$data.0.city_name}<br/>学生:{$studentCount}</span> | <span>作品:{$workCount}</p>
+            <span>{$data.0.pe_name},{$data.0.city_name}</span><br/>
+            <span>设计师:{$studentCount}</span> | <span>创作:{$workCount}</span>
           </div>
         </div>
     </div>
+    <!--
     <hr class="my-4">
     {$data.0.profile}
+    -->
   </div>
 <!--the end of jumbotron-->
-<div class="w-100 m-1">
+<div class="w-100 p-1" style="display:none;">
   <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
     <div class="btn-group mr-2" role="group" aria-label="First group">
-      <button type="button" class="btn btn-secondary" disabled="disabled">最新</button>
-      <button type="button" class="btn btn-secondary">推荐</button>
+      <button type="button" class="btn btn-secondary" {if ($Think.get.order=='')&&($Think.get.order=='new')}disabled="disabled"{/if}>最新</button>
+      <button type="button" class="btn btn-secondary" {if ($Think.get.order=='')}>浏览量多</button>
+      <button type="button" class="btn btn-secondary" {if ($Think.get.order=='')}>点赞量多</button>
     </div>
     <div class="input-group">
       <select class="form-control" id="exampleFormControlSelect1">
           <option>选择年度作品</option>
-          <option>2017年作品</option>
           <option>2018年作品</option>
+          <option>2017年作品</option>
       </select>
     </div>
   </div>
 </div>
 <!--the bg of content-->
+<!--
 <div class="w-100 p-3">
-<h5>From 2017</h5>
-<hr class="my-4">
+  <h5>From 2017</h5>
+  <hr class="my-4">
+</div>
+-->
+<div class="w-100" >
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#">最新</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">浏览最多</a>
+    </li>
+    <!--
+    <li class="nav-item">
+      <a class="nav-link " href="#">Disabled</a>
+    </li>
+  -->
+  </ul>
 </div>
 <div class="w-100 grid" >
-    <div class="card workscard grid-item" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1927/5206.png" style="width: 100%;height: auto" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">1.Special title treatment</h5>
-        <ul class="list-inline">
-          <li class="list-inline-item"><i class="fa fa-eye"></i> 999+</li>
-         <!-- <li class="list-inline-item"><i class="fa fa-commenting-o"></i> 999+</li>-->
-          <li class="list-inline-item"><i class="fa fa-thumbs-o-up"></i> 999+</li>
-        </ul>
-        <!--<a href="#" class="btn btn-primary">Go somewhere</a>--></div>
-      <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small> </div>
-    </div>
-    <div class="card workscard grid-item" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1926/5200.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">2.Special title treatment</h5>
-        <ul class="list-inline">
-          <li class="list-inline-item"><i class="fa fa-eye"></i> 999+</li>
-         <!-- <li class="list-inline-item"><i class="fa fa-commenting-o"></i> 999+</li>-->
-          <li class="list-inline-item"><i class="fa fa-thumbs-o-up"></i> 999+</li>
-        </ul>
-        <!--<a href="#" class="btn btn-primary">Go somewhere</a>--></div>
-      <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small> </div>
-    </div>
-    <div class="card workscard grid-item" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1925/5194.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">3.Special title treatment</h5>
-        <ul class="list-inline">
-          <li class="list-inline-item"><i class="fa fa-eye"></i> 999+</li>
-         <!-- <li class="list-inline-item"><i class="fa fa-commenting-o"></i> 999+</li>-->
-          <li class="list-inline-item"><i class="fa fa-thumbs-o-up"></i> 999+</li>
-        </ul>
-        <!--<a href="#" class="btn btn-primary">Go somewhere</a>--></div>
-      <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small> </div>
-    </div>
-    <div class="card workscard grid-item" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1924/5188.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">4.Special title treatment</h5>
-        <ul class="list-inline">
-          <li class="list-inline-item"><i class="fa fa-eye"></i> 999+</li>
-         <!-- <li class="list-inline-item"><i class="fa fa-commenting-o"></i> 999+</li>-->
-          <li class="list-inline-item"><i class="fa fa-thumbs-o-up"></i> 999+</li>
-        </ul>
-        <!--<a href="#" class="btn btn-primary">Go somewhere</a>--></div>
-      <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small> </div>
-    </div>
-    <div class="card workscard grid-item" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1923/5182.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">5.Special title treatment</h5>
-        <ul class="list-inline">
-          <li class="list-inline-item"><i class="fa fa-eye"></i> 999+</li>
-         <!-- <li class="list-inline-item"><i class="fa fa-commenting-o"></i> 999+</li>-->
-          <li class="list-inline-item"><i class="fa fa-thumbs-o-up"></i> 999+</li>
-        </ul>
-        <!--<a href="#" class="btn btn-primary">Go somewhere</a>--></div>
-      <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small> </div>
-    </div>
-    <div class="card workscard grid-item" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1922/5176.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">6.Special title treatment</h5>
-        <ul class="list-inline">
-          <li class="list-inline-item"><i class="fa fa-eye"></i> 999+</li>
-         <!-- <li class="list-inline-item"><i class="fa fa-commenting-o"></i> 999+</li>-->
-          <li class="list-inline-item"><i class="fa fa-thumbs-o-up"></i> 999+</li>
-        </ul>
-        <!--<a href="#" class="btn btn-primary">Go somewhere</a>--></div>
-      <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small> </div>
-    </div>
-    <div class="card workscard grid-item" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1921/5172.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">7.Special title treatment</h5>
-        <ul class="list-inline">
-          <li class="list-inline-item"><i class="fa fa-eye"></i> 999+</li>
-         <!-- <li class="list-inline-item"><i class="fa fa-commenting-o"></i> 999+</li>-->
-          <li class="list-inline-item"><i class="fa fa-thumbs-o-up"></i> 999+</li>
-        </ul>
-        <!--<a href="#" class="btn btn-primary">Go somewhere</a>--></div>
-      <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small> </div>
-    </div>
-    <div class="card workscard grid-item" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1919/5163.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">8.Special title treatment</h5>
-        <ul class="list-inline">
-          <li class="list-inline-item"><i class="fa fa-eye"></i> 999+</li>
-         <!-- <li class="list-inline-item"><i class="fa fa-commenting-o"></i> 999+</li>-->
-          <li class="list-inline-item"><i class="fa fa-thumbs-o-up"></i> 999+</li>
-        </ul>
-        <!--<a href="#" class="btn btn-primary">Go somewhere</a>--></div>
-      <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small> </div>
-    </div>
-    <div class="card workscard grid-item" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1918/5159.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">9.Special title treatment</h5>
-        <ul class="list-inline">
-          <li class="list-inline-item"><i class="fa fa-eye"></i> 999+</li>
-         <!-- <li class="list-inline-item"><i class="fa fa-commenting-o"></i> 999+</li>-->
-          <li class="list-inline-item"><i class="fa fa-thumbs-o-up"></i> 999+</li>
-        </ul>
-        <!--<a href="#" class="btn btn-primary">Go somewhere</a>--></div>
-      <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small> </div>
-    </div>
-    <div class="card workscard grid-item" style=""> <img class="card-img-top" src="http://ate.91ant.com/Public/common/works/0/1/1917/5157.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">10.Special title treatment</h5>
-        <ul class="list-inline">
-          <li class="list-inline-item"><i class="fa fa-eye"></i> 999+</li>
-         <!-- <li class="list-inline-item"><i class="fa fa-commenting-o"></i> 999+</li>-->
-          <li class="list-inline-item"><i class="fa fa-thumbs-o-up"></i> 999+</li>
-        </ul>
-        <!--<a href="#" class="btn btn-primary">Go somewhere</a>--></div>
-      <div class="card-footer"> <small class="text-muted">Last updated 3 mins ago</small> </div>
+  {volist name="worksdata" id="worksdata" offset='0' length='20'}
+  <div class="card workscard grid-item" > 
+    <a href="/worksinfo/{$worksdata.works_id}">
+      <img class="card-img-top" src="{$worksdata.cover}" width="100%" height="auto" style="width: 100%;height: auto" alt="{$worksdata.works_name}">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title">
+        <a href="/worksinfo/{$worksdata.works_id}">{$worksdata.works_name}</a>
+      </h5>
+      <ul class="list-inline">
+        <li class="list-inline-item"><i class="fa fa-eye"></i> 999+</li>
+       <!-- <li class="list-inline-item"><i class="fa fa-commenting-o"></i> 999+</li>-->
+        <li class="list-inline-item"><i class="fa fa-thumbs-o-up"></i> 999+</li>
+      </ul>
+      <!--<a href="#" class="btn btn-primary">Go somewhere</a>--></div>
+    <div class="card-footer"> <small class="text-muted">{$worksdata.create_time}</small> </div>
   </div>
+  {/volist}
 </div>
 <!--the end of content--> 
 <!--the bg of pagination-->
 <div class="w-100 p-3">
   <div class="row">
-    <button type="button" id="btn-more" class="btn btn-danger w-100">点击加载</button>
+    <button data-pagecount="{$PageCount}" data-nextpage="2" type="button" id="btn-more" class="btn btn-danger w-100">点击加载</button>
+    <input name="id" id="id" class="id" type="hidden" value="{$id}"/>
   </div>
 </div>
 <!--the bg of footer-->
@@ -166,55 +96,101 @@
 <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script> 
 <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
 <script>
-    // init Isotope
-  $(function(){
-    var testgw=function(){
-      var gw=$(".grid").width();
-      if(gw>1200){
-        giw=$(".grid-item").css("width",gw/6-8);
-      }else if(gw>992){
-        giw=$(".grid-item").css("width",gw/6-8);
-      }else if(gw>769){
-        giw=$(".grid-item").css("width",gw/3-8);
-      }else if(gw<769&&gw>577){
-        giw=$(".grid-item").css("width",gw/3-8);
-      }else if(gw>576){
-        giw=$(".grid-item").css("width",gw/2-8);
-      }else{
-        giw=$(".grid-item").css("width",gw/2-8);
-      }
+  	// init Isotope
+$(function(){
+  //$("#btn-more").data("nextpage",2);
+  var test=function(){
+    var gw=$(".grid").width();
+    if(gw>1200){
+      $(".grid-item").css("width",gw/6-8);
+      var giw=gw/6-8;
+    }else if(gw>992){
+      $(".grid-item").css("width",gw/6-8);
+      var giw=gw/6-8;
+    }else if(gw>769){
+      $(".grid-item").css("width",gw/3-8);
+      var giw=gw/3-8;
+    }else if(gw<769&&gw>577){
+      $(".grid-item").css("width",gw/3-8);
+      var giw=gw/3-8;
+    }else if(gw>576){
+      $(".grid-item").css("width",gw/2-8);
+      var giw=gw/2-8;
+    }else{
+      $(".grid-item").css("width",gw/2-8);
+      var giw=gw/2-8;
     }
-    testgw();
     $(".grid").isotope({ 
+      percentPosition: true,
       itemSelector: '.grid-item',
       layoutMode: 'masonry'
     });
+  }
+  test();
   
-    $('.grid').imagesLoaded(function(){
-      testgw();
-      $(".grid").isotope({ 
-        itemSelector: '.grid-item',
-        layoutMode: 'masonry'
-        
-      });
-      
-    });
-  
-  $(window).resize(function(){
-    testgw();
-      $(".grid").isotope({ 
-        itemSelector: '.grid-item',
-        layoutMode: 'masonry'
-      });
-      
-    });
-  
-    $("#btn-more").click(function(){
-      $(this).addClass('disabled');
-      $(this).html('<i class="fa fa-spinner fa-spin"></i> 正在加载中..');
-    })
-  });
+
+  $('.grid').imagesLoaded(function(){
+    test();
     
+  });
+
+$(window).resize(function(){
+  test();
+  });
+
+  $("#btn-more").on("click",function(){
+    var nextpage=$(this).attr("data-nextpage");
+    $(this).attr("data-nextpage",(nextpage)/1+1);
+    if(nextpage==$(this).data("pagecount")){
+      $(this).addClass('disabled');
+      $(this).html('我是一个有底线的人');
+    }
+    $.ajax({
+            url:"/index/index/get_works_inArea",
+            data:"school_id="+$("#id").val()+"&p="+nextpage+"&pc="+$(this).data("pagecount"),
+            async: false,
+            dataType:'json',
+            success:function(data){
+              if(data!="Null"){
+                $(this).addClass('disabled');
+                $(this).html('<i class="fa fa-spinner fa-spin"></i> 正在加载中..');
+                var w="";
+                console.log(data);
+                for(var i=0; i<=data.length-1; i++){
+                  w+='<div class="card workscard grid-item">'+
+                  '<a href="/worksinfo/'+data[i].works_id+'">'+
+                  '<img class="card-img-top" src="'+data[i].cover+'" style="width: 100%;height: auto" alt="'+data[i].works_name+'">'+
+                  '</a>'+
+                  '<div class="card-body">'+
+                  '<h5 class="card-title">'+
+                  '<a href="/worksinfo/'+data[i].works_id+'">'+data[i].works_name+'</a>'+
+                  '</h5>'+
+                  '<ul class="list-inline">'+
+                  '<li class="list-inline-item"><i class="fa fa-eye"></i> 999+</li>'+
+                  '<li class="list-inline-item"><i class="fa fa-thumbs-o-up"></i> 999+</li>'+
+                  '</ul></div>'+
+                  '<div class="card-footer"> <small class="text-muted">'+data[i].create_time+'</small> </div>'+
+                  '</div>';
+                }
+                $('.grid').append(w).isotope( 'reloadItems').isotope({ 
+                  percentPosition: true,
+                  itemSelector: '.grid-item',
+                  layoutMode: 'masonry'
+                });
+                 $('.grid').imagesLoaded().progress( function() {
+                  test(); 
+                });
+                $(this).removeClass('disabled');
+                $(this).html('点击加载');
+              }else{
+                $(this).html('我是一个有底线的人');
+              }
+            }
+        });
+ 
+  })
+});
+	
   </script>
 </body>
 </html>
