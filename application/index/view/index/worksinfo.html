@@ -16,7 +16,7 @@
               <i class="fa fa-clock-o"></i>
               {$data.0.create_time}</li>
             <li class="list-inline-item">
-              <i class="fa fa-eye"></i> 999+
+              <i class="fa fa-eye"></i> {$data.0.view+1}
             </li>
             <!--
             <li class="list-inline-item">
@@ -34,7 +34,7 @@
               <a href="/"><i class="fa fa-home"></i> 首页</a>
             </li>
             <li class="breadcrumb-item">
-              <a href="/works"><i class="fa fa-image"></i> 作品</a>
+              <a href="/areainfo/{$School.0.school_id}"><i class="fa fa-university"></i> {$School.0.real_name}</a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">
               {$data.0.works_name}

@@ -31,6 +31,8 @@ while($row=mysql_fetch_array($result)){
 	//echo $sql.";<br/>";
 	//mysql_query($sql,$conn);
   }
+
+mysql_query($sql,$conn);
 }
 //////////////////  the end of works ///////////////////////
 

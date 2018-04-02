@@ -39,9 +39,12 @@ class Index extends Controller{
         }  
     }
     public function worksinfo(){
-        config('CUR_Page', 'works');
+        config('CUR_Page', 'area');
         
         $data=Db::table("works")->where("works_id",input("param.id"))->select();
+		
+		Db::table("works")->where('works_id',$data[0]["works_id"])
+			->update(['view'=>$data[0]["view"]+1]);
         $Student=Db::table("student")->where("user_id",$data[0]["user_id"])->select();
         $this->assign('Student',$Student);
         $School=Db::table("school")->where("school_id",$Student[0]["school_id"])->select();
@@ -84,4 +87,5 @@ class Index extends Controller{
             echo "Null";
         }
     }
+	
 }
